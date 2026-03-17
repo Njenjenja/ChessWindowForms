@@ -6,19 +6,34 @@ using System.Threading.Tasks;
 
 namespace Pieces
 {
-    internal class Dot
+    public class Dot
     {
-        public int x;
-        public int y;
+        int x;
+        int y;
+
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        public Piece piece;
 
         public static Dot[,] allDots;
 
-        public Dot(int x, int y)
+        public Dot(int x, int y, Piece piece)
         {
             this.x = x;
             this.y = y;
 
             allDots[x, y] = this;
+            this.piece = piece;
         }
 
     }

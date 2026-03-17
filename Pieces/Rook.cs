@@ -81,6 +81,7 @@ namespace Pieces
                         !allPositions[i, Y].isWhite)
                     {
                         possibleTakes[i, Y] = true;
+                        break;
                     }
                     else if (allPositions[i, Y] != null && 
                         allPositions[i, Y].isWhite) break;
@@ -91,6 +92,7 @@ namespace Pieces
                         !allPositions[i, Y].isWhite)
                     {
                         possibleTakes[i, Y] = true;
+                        break;
                     }
                     else if (allPositions[i, Y] != null && 
                         allPositions[i, Y].isWhite) break;
@@ -102,6 +104,7 @@ namespace Pieces
                         !allPositions[X, i].isWhite)
                     {
                         possibleTakes[X, i] = true;
+                        break;
                     }
                     else if (allPositions[X, i] != null && 
                         allPositions[X, i].isWhite) break;
@@ -112,6 +115,7 @@ namespace Pieces
                         !allPositions[X, i].isWhite)
                     {
                         possibleTakes[X, i] = true;
+                        break;
                     }
                     else if (allPositions[X, i] != null && 
                         allPositions[X, i].isWhite) break;
@@ -127,6 +131,7 @@ namespace Pieces
                         allPositions[i, Y].isWhite)
                     {
                         possibleTakes[i, Y] = true;
+                        break;
                     }
                     else if (allPositions[i, Y] != null && 
                         !allPositions[i, Y].isWhite) break;
@@ -137,6 +142,7 @@ namespace Pieces
                         allPositions[i, Y].isWhite)
                     {
                         possibleTakes[i, Y] = true;
+                        break;
                     }
                     else if (allPositions[i, Y] != null && 
                         !allPositions[i, Y].isWhite) break;
@@ -148,6 +154,7 @@ namespace Pieces
                         allPositions[X, i].isWhite)
                     {
                         possibleTakes[X, i] = true;
+                        break;
                     }
                     else if (allPositions[X, i] != null && 
                         !allPositions[X, i].isWhite) break;
@@ -158,6 +165,7 @@ namespace Pieces
                         allPositions[X, i].isWhite)
                     {
                         possibleTakes[X, i] = true;
+                        break;
                     }
                     else if (allPositions[X, i] != null && 
                         !allPositions[X, i].isWhite) break;

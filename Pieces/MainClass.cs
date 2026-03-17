@@ -55,17 +55,31 @@ namespace Pieces
 
         public static void ShowPossibleMoves(Piece piece)
         {
+            if (Dot.allDots is null) Dot.allDots = new Dot[8, 8];
+
             for (int y = 0; y < 8; y++)
             {
                 for (int x = 0; x < 8; x++)
                 {
                     Dot.allDots[x, y] = null;
+
                     if (piece.possibleMoves[x, y] ||
                         piece.possibleTakes[x, y])
                     {
-                        new Dot(x, y);
+                        new Dot(x, y, piece);
                     }
                 }
+            }
+
+            for (int y = 0; y < 8; y++)
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    if (piece.possibleMoves[x, y]) Debug.Write("1");
+                    else if (piece.possibleTakes[x, y]) Debug.Write("2");
+                    else Debug.Write("0");
+                }
+                Debug.WriteLine("");
             }
         }
 
