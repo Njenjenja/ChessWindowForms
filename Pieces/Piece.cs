@@ -18,7 +18,7 @@ namespace Pieces
         int x;
         int y;
 
-        public bool isWhite;
+        public readonly bool isWhite;
 
         string pieceType;
 
@@ -29,6 +29,18 @@ namespace Pieces
          */
         public bool[,] possibleMoves = new bool[8, 8];
         public bool[,] possibleTakes = new bool[8, 8];
+
+        public bool this[int x, int y]
+        {
+            get
+            {
+                return possibleMoves[x, y];
+            }
+            set
+            {
+                possibleMoves[x, y] = value;
+            }
+        }
 
         public static Piece[,] allPositions = new Piece[8,8];
 

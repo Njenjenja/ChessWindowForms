@@ -47,13 +47,32 @@ namespace Pieces
 
             whiteKing = new King(3, 7, true);
             new Queen(4, 7, true);
-        }
 
-        
+            Debug.WriteLine($"black king {blackKing[3, 2]}");
+        }
 
 
 
         public static void ShowPossibleMoves(Piece piece)
+        {
+            if (Dot.allDots is null) Dot.allDots = new Dot[8, 8];
+
+            for (int y = 0; y < 8; y++)
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    Dot.allDots[x, y] = null;
+
+                    if (piece.possibleMoves[x, y] ||
+                        piece.possibleTakes[x, y])
+                    {
+                        new Dot(x, y, piece);
+                    }
+                }
+            }
+        }
+
+        public static void ShowPossibleMoves(Piece piece, bool debug)
         {
             if (Dot.allDots is null) Dot.allDots = new Dot[8, 8];
 
