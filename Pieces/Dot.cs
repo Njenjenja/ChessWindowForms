@@ -23,7 +23,7 @@ namespace Pieces
             set { y = value; }
         }
 
-        public Piece piece;
+        public readonly Piece piece;
 
         public static Dot[,] allDots;
 

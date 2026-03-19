@@ -18,7 +18,7 @@ namespace Pieces
         int x;
         int y;
 
-        public readonly bool isWhite;
+        public bool isWhite;
 
         string pieceType;
 
