@@ -66,11 +66,17 @@ namespace Pieces
             Debug.WriteLine($"Deleted {X}, {Y}");
         }
 
+        ///<summary>
+        ///Preveri vse mozne premike figure
+        ///</summary>
         public virtual bool[,] CheckMove()
         {
             return null;
         }
 
+        ///<summary>
+        ///Preveri vse mozne vzeme figure
+        ///</summary>
         public virtual bool[,] CheckTake()
         {
             return null;

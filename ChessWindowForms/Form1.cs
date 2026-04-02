@@ -30,7 +30,9 @@ namespace ChessWindowForms
         }
 
         
-
+        ///<summary>
+        ///Prikaze vse figure in pike na sahovnici
+        ///</summary>
         public void ShowBoard()
         {
             for (int y = 0; y < 8; y++)
@@ -88,6 +90,9 @@ namespace ChessWindowForms
             }
         }
 
+        ///<summary>
+        ///Postavi piko logicno
+        ///</summary>
         public void PlaceDot()
         {
             for (int y = 0; y < 8; y++)
@@ -120,11 +125,19 @@ namespace ChessWindowForms
             }
         }
 
+        ///<summary>
+        ///Po pomoti sem kliknil na Form1 in se mi ne da ukvarjati z konstruktorjem
+        ///</summary>
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
+
+        ///<summary>
+        ///Aktivira se ko kliknemo figuro ->
+        ///Postavi pike
+        ///</summary>
         private void ClickPiece(object sender, EventArgs e)
         {
             PictureBox clickedPicture = sender as PictureBox;
@@ -153,6 +166,11 @@ namespace ChessWindowForms
             else MessageBox.Show("Not your turn", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+
+        ///<summary>
+        ///Aktivira se ko kliknemo piko ->
+        ///Premakne figuro
+        ///</summary>
         private void ClickDot(object sender, EventArgs e)
         {
             PictureBox clickedPicture = sender as PictureBox;
@@ -167,6 +185,9 @@ namespace ChessWindowForms
             whiteTurn = !whiteTurn;
         }
 
+        ///<summary>
+        ///Zbrise vse pike
+        ///</summary>
         public void DeleteDots()
         {
             foreach(var kvp in dotPicture)
@@ -179,6 +200,10 @@ namespace ChessWindowForms
 
             dotPicture.Clear();
         }
+
+        ///<summary>
+        ///Zbrise vse figure
+        ///</summary>
         public void DeletePieces()
         {
             foreach (var kvp in piecePicture)

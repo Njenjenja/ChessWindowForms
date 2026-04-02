@@ -11,6 +11,10 @@ namespace Pieces
     {
         static King whiteKing;
         static King blackKing;
+
+        ///<summary>
+        ///Pripravi pozicije figur
+        ///</summary>
         public static void Setup()
         {
             //Name the Kings (blackKing, whiteKing)
@@ -52,7 +56,9 @@ namespace Pieces
         }
 
 
-
+        ///<summary>
+        ///Naredi objekte Dot za vsak mozni premik
+        ///</summary>
         public static void ShowPossibleMoves(Piece piece)
         {
             if (Dot.allDots is null) Dot.allDots = new Dot[8, 8];
@@ -72,6 +78,9 @@ namespace Pieces
             }
         }
 
+        ///<summary>
+        ///Naredi objekte Dot za vsak mozni premik in jih poslje v debug output
+        ///</summary>
         public static void ShowPossibleMoves(Piece piece, bool debug)
         {
             if (Dot.allDots is null) Dot.allDots = new Dot[8, 8];
@@ -102,6 +111,9 @@ namespace Pieces
             }
         }
 
+        ///<summary>
+        ///Premakne figure
+        ///</summary>
         public static void MovePiece(Piece piece, int x, int y)
         {
             if (piece.possibleMoves[x, y] || piece.possibleTakes[x, y])
@@ -118,6 +130,9 @@ namespace Pieces
             }
         }
 
+        ///<summary>
+        ///Poklice funkcije od figure, ki preverijo premike
+        ///</summary>
         public static void UpdateInfo()
         {
             for (int y = 0; y < 8; y++)
@@ -146,6 +161,9 @@ namespace Pieces
             }
         }
 
+        ///<summary>
+        ///Preveri ce je kralj v sahu
+        ///</summary>
         public static void CheckIfInCheck(Piece piece)
         {
             if (piece.isWhite &&
@@ -162,8 +180,9 @@ namespace Pieces
             }
         }
 
-        //create a method that gets every King possible move and take
-        //and check if that move will result in a check
+        ///<summary>
+        ///Preveri ce kraljev premik naredi sah
+        ///</summary>
         public static void CheckIfMoveResultsInCheck(Piece piece)
         {
             for (int y = 0; y < 8; y++)
